@@ -1,0 +1,175 @@
+:root {
+  --border: #506c89;
+  --color1: #181a1b;
+  --color2: #121212;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "JetBrains Mono", monospace;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  /* background-color: #fff; */
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.6px;
+  word-spacing: 0.6px;
+  background-color: var(--color1);
+}
+
+main {
+  max-width: 950px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: calc(100vh - 154px);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 8px 0 12px 0;
+}
+
+
+label {
+  font-size: 17px;
+}
+
+input,
+select {
+  border: 1px solid var(--border);
+  padding: 6px;
+  margin-bottom: 4px;
+  border-radius: 2px;
+  background-color: var(--color1);
+  color: white
+}
+
+.input-block {
+  margin-bottom: 4px;
+}
+
+.input-block.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-block.center {
+  text-align: center;
+}
+
+#submit {
+  padding: 12px 24px;
+  margin-bottom: 0;
+  background-color: #4299e1;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+#submit:hover {
+  background-color: #2b6cb0;
+}
+
+#monthly-income {
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+fieldset {
+  border: 2px solid var(--border);
+  margin-bottom: 8px;
+  padding: 16px 14px 14px 14px;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.half {
+  display: flex;
+}
+
+.half .left {
+  width: 50%;
+  margin-right: 4px;
+  background-color: var(--color1);
+}
+
+.half .right {
+  width: 50%;
+  margin-left: 4px;
+  background-color: var(--color1);
+}
+
+.main-form {
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 16px;
+  background-color: var(--color1);
+}
+
+form {
+  background-color: #f7fafc;
+  padding: 12px;
+  margin-bottom: 22px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+.center {
+  text-align: center;
+}
+
+#tax-calculator {
+  position: relative;
+  background-color: var(--color1);
+  color: white
+}
+
+fieldset {
+  background-color: var(--color1);
+}
+
+.update {
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px;
+}

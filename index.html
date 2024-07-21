@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+    </style>
+</head>
+
+<body>
+    <main>
+        <form id="tax-calculator" action="/calculate" method="post">
+            <h1>PH Tax Calculator</h1>
+            <span class="update">Update on June 11, 2024</span>
+            <fieldset class="main-form">
+                <div class="input-block center">
+                    <label for="monthly-income">Monthly Income</label>
+                    <input id="monthly-income" name="monthly-income" type="text" value="{{.MonthlyIncome}}">
+                </div>
+                <div class="input-block center">
+                    <input id="submit" type="submit" value="Calculate">
+                </div>
+            </fieldset>
+            <h2 class="center">Computation Result</h2>
+            <div class="half">
+                <fieldset class="left">
+                    <legend>Tax Computation</legend>
+                    <div class="input-block space-between">
+                        <label for="income-tax">Income Tax</label>
+                        <input id="income-tax" name="income-tax" type="text" value="{{.IncomeTax}}" readonly>
+                    </div>
+                    <div class="input-block space-between">
+                        <label for="net-pay-after-tax">Net Pay after Tax</label>
+                        <input id="net-pay-after-tax" name="net-pay-after-tax" type="text" value="{{.NetPayAfterTax}}" readonly>
+                    </div>
+                </fieldset>
+                <fieldset class="right">
+                    <legend>Monthly Contributions</legend>
+                    <div class="input-block space-between">
+                        <label for="sss">SSS</label>
+                        <input id="sss" name="sss" type="text" value="{{.SSS}}" readonly>
+                    </div>
+                    <div class="input-block space-between">
+                        <label for="philhealth">PhilHealth</label>
+                        <input id="philhealth" name="philhealth" type="text" value="{{.PhilHealth}}" readonly>
+                    </div>
+                    <div class="input-block space-between">
+                        <label for="pag-ibig">Pag-IBIG</label>
+                        <input id="pag-ibig" name="pag-ibig" type="text" value="{{.PagIbig}}" readonly>
+                    </div>
+                    <div class="input-block space-between">
+                        <label for="total-contributions">Total Contributions</label>
+                        <input id="total-contributions" name="total-contributions" type="text" value="{{.TotalContributions}}" readonly>
+                    </div>
+                </fieldset>
+            </div>
+            <fieldset>
+                <div class="input-block center">
+                    <label for="total-deductions">Total Deductions</label>
+                    <input id="total-deductions" name="total-deductions" type="text" value="{{.TotalDeductions}}" readonly>
+                </div>
+                <div class="input-block center">
+                    <label for="net-pay">Net Pay after Deductions</label>
+                    <input id="net-pay" name="net-pay" type="text" value="{{.NetPay}}" readonly>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+    <script>
+        const salary = document.getElementById("monthly-income");
+        salary.addEventListener('keydown', function() {
+            clear();
+        });
+
+        function clear() {
+            let inputs = Array.from(document.querySelectorAll('input[type=text]'));
+            inputs.forEach(function(input) {
+                if (input.id != "monthly-income") {
+                    input.value = "";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
